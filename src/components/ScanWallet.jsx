@@ -241,7 +241,7 @@ const ScanWallet = () => {
   </button>
 </div>
 
-<button
+                  <button
                     className="mt-8 w-56 h-14 mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center text-lg"
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',

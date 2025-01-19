@@ -39,113 +39,74 @@ const WalletConnection = () => {
               <img
                   src="./images/icons/logo.png" // Замените на ваш логотип
                   alt="Logo"
-                  className="w-8 h-5"
+                  className="w-[5%] h-[5%] mx-auto"
               />
-              <span className="ml-3 text-lg text-white font-semibold">DegenAI</span>
             </div>
-            <div className='w-64 flex flex-col gap-5 mb-8'>
+            <div className='w-[20%] flex flex-col gap-5 mb-8'>
               <h1 className='text-3xl text-white fonts-violet mx-auto text-center'>Generate your unique NFT based on your tokens</h1>
               <p className='text-[#AEB9E1] fonts-mono text-center'>Connect your wallet, and let the magic happen!</p>
             </div>
 
-            <div className='h-[585px] w-[290px] border border-[#343B4F] rounded-md mb-8'>
-            <div className="bg-[#0A1330] p-2 rounded-lg shadow-lg  w-full h-full max-w-md">
-                {/* Заголовок */}
-                <h2 className="text-[28px] font-bold text-white mb-2 text-center fonts-violet">Connect Wallet</h2>
-                <p className="text-[#AEB9E1] text-center mb-6 fonts-mono">Choose your wallet<br/> to log in</p>
-        
-                {/* Что такое Wallet */}
-                <div className="text-[#AEB9E1] mb-6 flex flex-row justify-center">
-                <a href="#" className="flex items-center space-x-2 hover:text-white">
-                    <img src="./images/icons/question.png" alt="question" className='w-6 h-6'/>
-                    <span className='fonts-mono text-[10px]'>What Is Wallet?</span>
-                </a>
-                </div>
-        
-                {/* Список популярных Wallet */}
-                <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-sm ">Popular</h3>
-                <div className="grid grid-cols-2 gap-2 mb-6 fonts-mono hover:text-white">
- 
-                      <button className="h-14 w-[135px] flex  items-center space-x-2 bg-transparent border border-[#343B4F] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/metamask.png"
-                          alt="MetaMask"
-                          className="w-6 h-6"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">MetaMask</span>
-                      </button>
-                    
-                      {/* Trust Wallet */}
-                      <button className="h-14 w-[135px] flex items-center space-x-2 bg-transparent border border-[#343B4F] text-[#AEB9E1] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/trust.png"
-                          alt="Trust Wallet"
-                          className="w-5 h-5"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">Trust Wallet</span>
-                      </button>
-                    
-                      {/* CoinBase */}
-                      <button className="h-14 w-[135px] flex items-center space-x-2 bg-transparent border border-[#343B4F] text-[#AEB9E1] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/coinbase.png"
-                          alt="CoinBase"
-                          className="w-5 h-5"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">CoinBase</span>
-                      </button>
-                    
-                      {/* OKX Wallet */}
-                      <button className="h-14 w-[135px] flex items-center space-x-2 bg-transparent border border-[#343B4F] text-[#AEB9E1] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/okx.png"
-                          alt="OKX Wallet"
-                          className="w-5 h-5"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">OKX Wallet</span>
-                      </button>
-                    
-                      {/* TronLink */}
-                      <button className="h-14 flex w-[135px] items-center space-x-2 bg-transparent border border-[#343B4F] text-[#AEB9E1] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/tronlink.png"
-                          alt="TronLink"
-                          className="w-5 h-5"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">TronLink</span>
-                      </button>
-                    
-                      {/* BITGET */}
-                      <button className="h-14 flex w-[135px] items-center space-x-2 bg-transparent border border-[#343B4F] text-[#AEB9E1] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/bitget.png"
-                          alt="BITGET"
-                          className="w-5 h-5"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">BITGET</span>
-                      </button>
-                    
-                      {/* WalletConnect */}
-                      <button className="h-14 col-span-2 w-[275px] flex items-center space-x-2 bg-transparent border border-[#343B4F] text-[#AEB9E1] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
-                        <img
-                          src="./images/icons/wallet.png"
-                          alt="WalletConnect"
-                          className="w-5 h-5"
-                        />
-                        <span className="hover:text-white text-[#AEB9E1] text-xs">WalletConnect</span>
-                      </button>
-                    </div>
-                {/* Кнопка Scan My Wallet */}
-                <button
-                    className="fonts-violet w-[190px] h-[50px] mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center"
-                    style={{
-                        background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
-                    }}
-                    >
-                    Scan my wallet →
-                    </button>
-            </div>
-        </div>
+            <div className="w-full max-w-[95%] sm:max-w-md mx-auto border border-[#343B4F] rounded-md mb-4 p-4">
+  <div className="bg-[#0A1330] p-4 rounded-lg shadow-lg w-full">
+    {/* Заголовок */}
+    <h2 className="text-lg sm:text-2xl font-bold text-white mb-4 mt-6 text-center fonts-violet">
+      Connect Wallet
+    </h2>
+    <p className="text-[#AEB9E1] text-center mb-4 text-sm sm:text-base fonts-mono">
+      Choose your wallet<br /> to log in
+    </p>
+
+    {/* Что такое Wallet */}
+    <div className="text-[#AEB9E1] mb-4 flex justify-center">
+      <a href="#" className="flex items-center space-x-2 hover:text-white">
+        <img src="./images/icons/question.png" alt="question" className="w-5 h-5 sm:w-6 sm:h-6" />
+        <span className="fonts-mono text-xs sm:text-sm">What Is Wallet?</span>
+      </a>
+    </div>
+
+    {/* Список популярных Wallet */}
+    <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-xs sm:text-sm">Popular</h3>
+    <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4">
+      {[
+        { img: "metamask.png", label: "MetaMask" },
+        { img: "trust.png", label: "Trust Wallet" },
+        { img: "coinbase.png", label: "CoinBase" },
+        { img: "okx.png", label: "OKX Wallet" },
+        { img: "tronlink.png", label: "TronLink" },
+        { img: "bitget.png", label: "BITGET" },
+        { img: "wallet.png", label: "WalletConnect", colSpan: true },
+      ].map((wallet, index) => (
+        <button
+          key={index}
+          className={`h-12 sm:h-14 w-full flex items-center space-x-2 bg-transparent border border-[#343B4F] px-3 py-2 rounded-lg hover:bg-[#FFFFFF14] ${
+            wallet.colSpan ? "col-span-2" : ""
+          }`}
+        >
+          <img
+            src={`./images/icons/${wallet.img}`}
+            alt={wallet.label}
+            className="w-4 h-4 sm:w-5 sm:h-5"
+          />
+          <span className="text-xs sm:text-sm text-[#AEB9E1] hover:text-white">
+            {wallet.label}
+          </span>
+        </button>
+      ))}
+    </div>
+
+    {/* Кнопка Scan My Wallet */}
+    <button
+      className="fonts-violet w-full h-12 sm:h-14 mx-auto text-white font-bold py-2 sm:py-3 rounded-lg flex items-center justify-center"
+      style={{
+        background: "linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)",
+      }}
+    >
+      Scan my wallet →
+    </button>
+  </div>
+</div>
+
         <CarouselMobile />
         <div className='mt-4 w-[105px] h-[40px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F]'>
             <p className='text-[#AEB9E1] text-xs'>Explore</p>

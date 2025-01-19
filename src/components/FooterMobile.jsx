@@ -2,7 +2,7 @@ import React from 'react';
 
 const FooterMobile = () => {
   return (
-    <footer className="mt-6 bg-[#090C21] text-[#AEB9E1] py-8 px-6 rounded-t-lg w-80 rounded-t-3xl h-[450px] flex flex-col gap-6 fonts-mono">
+    <footer className="mt-6 bg-[#090C21] text-[#AEB9E1] py-8 px-6 rounded-t-lg w-[420px] rounded-t-3xl h-[450px] flex flex-col gap-6 fonts-mono">
       {/* Верхняя часть футера */}
       <div className="flex items-center justify-between mb-6 mt-8 p-2">
         {/* Кнопка "Return to site" */}

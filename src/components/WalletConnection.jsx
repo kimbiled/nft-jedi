@@ -47,7 +47,7 @@ const WalletConnection = () => {
               <p className='text-[#AEB9E1] fonts-mono text-center'>Connect your wallet, and let the magic happen!</p>
             </div>
 
-            <div className="h-[615px] w-[380px] border border-[#343B4F] rounded-md mb-8 w-full">
+            <div className="h-[615px] w-[380px] border border-[#343B4F] rounded-md mb-8">
             <div className="bg-[#0A1330] p-2 rounded-lg shadow-lg  w-full h-full max-w-md">
                 {/* Заголовок */}
                 <h2 className="text-[28px] font-bold text-white mb-2 mt-10 text-center fonts-violet">Connect Wallet</h2>

@@ -4,7 +4,7 @@ const FooterMobile = () => {
   return (
     <footer className="mt-6 bg-[#090C21] text-[#AEB9E1] py-8 px-6 rounded-t-lg w-[32%] rounded-t-3xl h-[450px] flex flex-col gap-6 fonts-mono">
       {/* Верхняя часть футера */}
-      <div className="flex items-center justify-between mb-6 mt-8 p-2">
+      <div className="flex items-center justify-between mb-6 mt-8 p-4">
         {/* Кнопка "Return to site" */}
         <button className="w-[160px] h-[45px] flex items-center justify-center space-x-2 border border-[#343B4F] rounded-lg hover:bg-gray-700 text-white">
           <span>←</span>
@@ -18,7 +18,7 @@ const FooterMobile = () => {
       </div>
 
       {/* Логотип */}
-      <div className="flex items-center mb-6">
+      <div className="flex items-center mb-6 px-8">
         <img
           src="./images/icons/logo.png"
           alt="Logo"
@@ -28,13 +28,13 @@ const FooterMobile = () => {
       </div>
 
       {/* Политика и условия */}
-      <div className="flex flex-col gap-6 mb-2 opacity-50">
+      <div className="flex flex-col gap-6 mb-2 opacity-50 px-8">
         <p className="hover:text-white cursor-pointer ">Privacy Policy</p>
         <p className="hover:text-white cursor-pointer">Terms & Conditions</p>
       </div>
 
       {/* Копирайт */}
-      <div className="text-xs opacity-50">
+      <div className="text-xs opacity-50 px-8">
         <p>© 2025 DEGENTS. All rights reserved</p>
       </div>
     </footer>

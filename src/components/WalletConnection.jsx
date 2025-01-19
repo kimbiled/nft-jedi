@@ -26,7 +26,7 @@ const WalletConnection = () => {
     <div>
       {isMobile? (
         
-        <div className="flex flex-col items-center h-auto bg-[#081028]"
+        <div className="flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden"
         style={{
           backgroundImage: "url('/images/backgrounds/grid.png')",
           backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона

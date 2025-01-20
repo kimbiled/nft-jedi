@@ -11,7 +11,6 @@ const Header = () => {
                 alt="Logo"
                 className="w-8 h-5"
             />
-            <span className="ml-3 text-lg font-semibold">DegenAI</span>
           </div>
 
           {/* Back Button */}

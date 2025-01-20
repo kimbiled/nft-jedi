@@ -26,7 +26,7 @@ const WalletConnection = () => {
     <div>
       {isMobile? (
         
-        <div className="flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden max-w-[420px]"
+        <div className="flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden max-w-[425px]"
         style={{
           backgroundImage: "url('/images/backgrounds/grid.png')",
           backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона
@@ -47,8 +47,8 @@ const WalletConnection = () => {
               <p className='text-[#AEB9E1] fonts-mono text-center'>Connect your wallet, and let the magic happen!</p>
             </div>
 
-            <div className="h-[615px] w-[380px] border border-[#343B4F] rounded-md mb-8">
-            <div className="bg-[#0A1330] p-2 rounded-lg shadow-lg  w-full h-full max-w-md">
+            <div className="h-[615px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]">
+            <div className="bg-[#0A1330] p-2  w-full border border-[#343B4F] rounded-md h-full sm25:w-[390px] sm20:w-[300px] sm75:w-[350px] sm25:mx-auto sm20:mx-auto sm75:mx-auto">
                 {/* Заголовок */}
                 <h2 className="text-[28px] font-bold text-white mb-2 mt-10 text-center fonts-violet">Connect Wallet</h2>
                 <p className="text-[#AEB9E1] text-center mb-6 fonts-mono">Choose your wallet<br/> to log in</p>
@@ -146,7 +146,7 @@ const WalletConnection = () => {
             </div>
         </div>
         <CarouselMobile />
-        <div className='mt-4 w-[150px] h-[45px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F]'>
+        <div className='mt-4 w-[150px] h-[45px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F] hover:bg-gray-600 hover:bg-opacity-30'>
             <p className='text-[#AEB9E1] text-sm'>Explore</p>
             <img src="./images/icons/bag.png" alt="bag" className='w-4 h-4'/>
         </div>

@@ -35,7 +35,7 @@ useEffect(() => {
          }}>
            <HeaderMobileScan />
            <div className='flex flex-col items-center justify-center gap-4' >
-             <div className='flex flex-row items-center mb-4' data-aos="fade-right">
+             <div className='flex flex-row items-center mb-4'>
                <a href='https://degenai.ai/'>
                <img
                    src="./images/icons/logo.png" // Замените на ваш логотип
@@ -44,15 +44,15 @@ useEffect(() => {
                />
                </a>
              </div>
-             <div className='sm20:w-[250px] flex flex-col gap-5 mb-8' data-aos="fade-left">
-               <h1 className='text-3xl text-white mx-auto text-center'>Transform Your
+             <div className='w-[280px] flex flex-col gap-5 mb-8' >
+               <h1 className='text-[28px] text-white mx-auto text-center'>Transform Your
 Tokens Into
 Exclusive NFTs</h1>
                <p className='text-[#AEB9E1] fonts-mono text-center'>Each NFT is uniquely crafted
                based on the coins you hold</p>
              </div>
  
-             <div className="h-[715px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]" data-aos="fade-right">
+             <div className="h-[715px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]" data-aos="fade-up">
              <div className="bg-[#0A1330] p-2  w-full border border-[#343B4F] rounded-md h-full sm25:w-[390px] sm20:w-[300px] sm75:w-[350px] sm25:mx-auto sm20:mx-auto sm75:mx-auto">
                  {/* Заголовок */}
                  <h2 className="text-[28px] text-white mb-2 mt-10 text-center">Tokens Detected!</h2>
@@ -239,7 +239,6 @@ Exclusive NFTs</h1>
     backgroundPosition: "center 200px", // Центрирование фона
     backgroundRepeat: "no-repeat"
   }}
-  data-aos="fade-left"
 >
   {/* Заголовок */}
   <h2 className="text-4xl sm20:text-[26px] 2xl:text-[42px] sm:text-4xl mb-2 text-white sm20:w-[260px] mx-auto mt-8 text-center" >
@@ -365,7 +364,7 @@ Exclusive NFTs</h1>
 
         </div>
 
-        <div className='h-[635px] w-[470px] bg-home-ellipse border border-[#343B4F] rounded-md'  data-aos="fade-right">
+        <div className='h-[635px] w-[470px] bg-home-ellipse border border-[#343B4F] rounded-md'  data-aos="fade-up">
             <div className="bg-[#0A1330] p-8 rounded-lg shadow-lg w-full h-full max-w-md">
                 {/* Заголовок */}
                 <h2 className="text-4xl text-white mb-2 text-center ">Tokens Detected!</h2>

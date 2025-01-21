@@ -1,10 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 const CarouselMobile = () => {
-  useEffect(() => {
-      AOS.init({ duration: 1000, once: true });
-    }, []);
   const items = [
     { id: 1, username: "unit1", name: "Cyber", img: "./images/avatars/first.png" },
     { id: 2, username: "vkptr03", name: "Floking", img: "./images/avatars/second.png" },
@@ -27,7 +22,7 @@ const CarouselMobile = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden p-4" data-aos="fade-left">
+    <div className="relative w-full overflow-hidden p-4">
       <div
         ref={carouselRef}
         className="flex space-x-4 w-full overflow-x-auto scrollbar-hide"

@@ -1,11 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 const Sidebar = () => {
-    useEffect(() => {
-          AOS.init({ duration: 1000 });
-        }, []);
     const [activeMenu, setActiveMenu] = useState(null);
     const navigate = useNavigate()
     const goToMyTokens = () =>{

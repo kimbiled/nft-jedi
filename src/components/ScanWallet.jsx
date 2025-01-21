@@ -379,7 +379,7 @@ Exclusive NFTs</h1>
                 </div>
          */}
                 {/* Список популярных Wallet */}
-                <h3 className="text-[#AEB9E1] mb-4 fonts-mono">TOP 3 your Tokens</h3>
+                <h3 className="text-[#AEB9E1] mb-4 fonts-mono">TOP 3 Tokens</h3>
                 <div className="rounded-lg shadow-lg">
   {/* Список монет */}
   <div className="space-y-2 fonts-mono"  data-aos="fade-left">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-const HeaderMobile = () => {
+const HeaderMobileScan = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -21,15 +21,14 @@ const HeaderMobile = () => {
 
   return (
     <header className='text-white flex flex-row justify-around items-center mt-6 w-[90%] h-[70px] rounded-lg bg-[#AEB9E103] border border-[#343B4F47] backdrop-blur-[24px] mb-12'>
-      <button
-        className="fonts-violet w-[55%] h-[2.8rem] text-white font-bold rounded-lg flex items-center justify-center "
-        style={{
-          background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
-        }}
-        onClick={onClickScan}
-      >
-        Scan my wallet →
-      </button>
+      <div className='flex flex-row items-center gap-2'>
+        <img src="./images/avatars/avatar.png" alt="avatar" className='w-6 h-6' />
+        <p className='fonts-mono text-sm'>0x17...85</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"/>
+        </svg>
+
+      </div>
       <div className='flex flex-row gap-3'>
         <div className='w-[2.8rem] h-[2.8rem] border border-[#343B4F] rounded-md flex flex-col items-center justify-center'>
           <img src="./images/icons/bell.png" alt="bell" className='w-5 h-5' />
@@ -56,4 +55,4 @@ const HeaderMobile = () => {
   );
 };
 
-export default HeaderMobile;
+export default HeaderMobileScan;

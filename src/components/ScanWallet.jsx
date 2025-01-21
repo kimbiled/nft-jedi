@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import HeaderMobile from './HeaderMobile'
+import HeaderMobileScan from './HeaderMobileScan'
 import CarouselMobile from './CarouselMobile'
 import FooterMobile from './FooterMobile'
 const ScanWallet = () => {
@@ -16,6 +16,9 @@ const ScanWallet = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const onClickConnect= () => {
+    navigate("/profile")
+  }
 
   return (
     <div>
@@ -27,7 +30,7 @@ const ScanWallet = () => {
            backgroundPosition: "center",
            backgroundRepeat: "no-repeat"
          }}>
-           <HeaderMobile />
+           <HeaderMobileScan />
            <div className='flex flex-col items-center justify-center gap-4'>
              <div className='flex flex-row items-center mb-4'>
                <img
@@ -58,7 +61,7 @@ Exclusive NFTs</h1>
                  </div> */}
          
                  {/* Список популярных Wallet */}
-                 <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-sm ">TOP 3 your Tokens</h3>
+                 <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-sm ml-2">TOP 3 Tokens</h3>
                  <div className="space-y-2 fonts-mono">
                     {/* PepeCoin */}
                       <div className='flex flex-row gap-2'>
@@ -203,6 +206,7 @@ Exclusive NFTs</h1>
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}
+                    onClick={onClickConnect}
                     >
                     Generate My NFT →
                     </button>
@@ -256,8 +260,9 @@ Exclusive NFTs</h1>
   </div>
 
   {/* Most Popular Token */}
-  <div className="fonts-mono relative flex items-center justify-between w-full h-[60px] rounded-md border border-[#343B4F] bg-transparent p-2 backdrop-blur-[24px]">
+  <div className="fonts-mono relative flex items-center justify-around w-full h-[60px] rounded-md border border-[#343B4F] bg-transparent p-2 backdrop-blur-[24px]">
     <p className="text-[#AEB9E1] text-xs">Most Popular Token:</p>
+    <div className='flex flex-row items-center gap-3'> 
     <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
       <img
         src="./images/icons/pepe.png"
@@ -265,7 +270,8 @@ Exclusive NFTs</h1>
         className="w-full h-full object-cover"
       />
     </div>
-    <p className="text-white text-xs ">PepeCoin</p>
+    <p className="text-white text-xs mr-5">PepeCoin</p>
+    </div>
   </div>
 </div>
          <FooterMobile />

@@ -22,6 +22,10 @@ const WalletConnection = () => {
     navigate("/scan"); // Переход на страницу /about
   };
 
+  const goToExplore = () => {
+    navigate("/marketplace"); // Переход на страницу /about
+  };
+
   return (
     <div>
       {isMobile? (
@@ -57,12 +61,12 @@ const WalletConnection = () => {
                 <div className="text-[#AEB9E1] mb-6 flex flex-row justify-center">
                 <a href="#" className="flex items-center space-x-2 hover:text-white">
                     <img src="./images/icons/question.png" alt="question" className='w-6 h-6'/>
-                    <span className='fonts-mono text-[10px]'>What Is Wallet?</span>
+                    <span className='fonts-mono text-sm'>What Is Wallet?</span>
                 </a>
                 </div>
         
                 {/* Список популярных Wallet */}
-                <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-sm ">Popular</h3>
+                <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-sm ml-2">Popular</h3>
                 <div className="grid grid-cols-2 gap-2 mb-6 fonts-mono hover:text-white">
  
                       <button className="h-14 w-full flex  items-center space-x-2 bg-transparent border border-[#343B4F] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
@@ -140,13 +144,15 @@ const WalletConnection = () => {
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}
+                    onClick={goToScan}
                     >
                     Scan my wallet →
                     </button>
             </div>
         </div>
         <CarouselMobile />
-        <div className='mt-4 w-[150px] h-[45px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F] hover:bg-gray-600 hover:bg-opacity-30'>
+        <div className='mt-4 w-[150px] h-[45px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F] hover:bg-gray-600 hover:bg-opacity-30'
+        onClick={goToExplore}>
             <p className='text-[#AEB9E1] text-sm'>Explore</p>
             <img src="./images/icons/bag.png" alt="bag" className='w-4 h-4'/>
         </div>

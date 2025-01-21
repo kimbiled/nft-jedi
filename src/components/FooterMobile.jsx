@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const FooterMobile = () => {
+  useEffect(() => {
+      AOS.init({ duration: 1000, once:true});
+    }, []);
   const navigate = useNavigate()
 
   const onClickHome = () => {
     navigate("/")
   }
   return (
-    <footer className="mt-6 bg-[#090C21] text-[#AEB9E1] sm20:p-6 sm75:p-8 sm25:p-10 rounded-t-3xl max-w-[450px] min-w-[320px] sm20:w-[320px] sm75:w-[390px] sm25:w-[430px] rounded-t-3xl h-[400px] flex flex-col gap-6 fonts-mono">
+    <footer  data-aos="fade-right" className="mt-6 bg-[#090C21] text-[#AEB9E1] sm20:p-6 sm75:p-8 sm25:p-10 rounded-t-3xl max-w-[450px] min-w-[320px] sm20:w-[320px] sm75:w-[390px] sm25:w-[430px] rounded-t-3xl h-[400px] flex flex-col gap-6 fonts-mono">
       {/* Верхняя часть футера */}
       <div className="flex items-center justify-between mb-6 mt-8 ">
         {/* Кнопка "Return to site" */}
@@ -31,7 +36,6 @@ const FooterMobile = () => {
           alt="Logo"
           className="w-8 h-4 mr-4"
         />
-        <p className="text-white font-bold text-lg">DegenAI</p>
       </div>
 
       {/* Политика и условия */}

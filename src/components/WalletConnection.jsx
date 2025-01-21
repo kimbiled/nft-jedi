@@ -5,9 +5,19 @@ import { useNavigate } from "react-router-dom";
 import HeaderMobile from './HeaderMobile'
 import CarouselMobile from './CarouselMobile'
 import FooterMobile from './FooterMobile'
+
+//transitions
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const WalletConnection = () => {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,16 +40,16 @@ const WalletConnection = () => {
     <div>
       {isMobile? (
         
-        <div className="flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden max-w-[425px]"
+        <div className=" fonts-mono flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden max-w-[425px]"
         style={{
           backgroundImage: "url('/images/backgrounds/grid.png')",
           backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
         }}>
-          <HeaderMobile />
+          <HeaderMobile/>
           <div className='flex flex-col items-center justify-center gap-4'>
-            <div className='flex flex-row items-center mb-4'>
+            <div className='flex flex-row items-center mb-4' data-aos="fade-right">
               <a href='https://degenai.ai/'>
               <img
                   src="./images/icons/logo.png" // Замените на ваш логотип
@@ -48,15 +58,15 @@ const WalletConnection = () => {
               />
               </a>
             </div>
-            <div className='w-[20%] flex flex-col gap-5 mb-8'>
-              <h1 className='text-3xl text-white fonts-violet mx-auto text-center'>Generate your unique NFT based on your tokens</h1>
+            <div className='w-[20%] flex flex-col gap-5 mb-8' data-aos="fade-left">
+              <h1 className='text-3xl text-white  mx-auto text-center'>Generate your unique NFT based on your tokens</h1>
               <p className='text-[#AEB9E1] fonts-mono text-center'>Connect your wallet, and let the magic happen!</p>
             </div>
 
-            <div className="h-[615px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]">
+            <div className="h-[615px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]" data-aos="fade-right">
             <div className="bg-[#0A1330] p-2  w-full border border-[#343B4F] rounded-md h-full sm25:w-[390px] sm20:w-[300px] sm75:w-[350px] sm25:mx-auto sm20:mx-auto sm75:mx-auto">
                 {/* Заголовок */}
-                <h2 className="text-[28px] font-bold text-white mb-2 mt-10 text-center fonts-violet">Connect Wallet</h2>
+                <h2 className="text-[28px] text-white mb-2 mt-10 text-center ">Connect Wallet</h2>
                 <p className="text-[#AEB9E1] text-center mb-6 fonts-mono">Choose your wallet<br/> to log in</p>
         
                 {/* Что такое Wallet */}
@@ -69,7 +79,7 @@ const WalletConnection = () => {
         
                 {/* Список популярных Wallet */}
                 <h3 className="text-[#AEB9E1] mb-4 fonts-mono text-sm ml-2">Popular</h3>
-                <div className="grid grid-cols-2 gap-2 mb-6 fonts-mono hover:text-white">
+                <div className="grid grid-cols-2 gap-2 mb-6 fonts-mono hover:text-white" >
  
                       <button className="h-14 w-full flex  items-center space-x-2 bg-transparent border border-[#343B4F] px-4 py-2 rounded-lg hover:bg-[#FFFFFF14]">
                         <img
@@ -142,7 +152,7 @@ const WalletConnection = () => {
                     </div>
                 {/* Кнопка Scan My Wallet */}
                 <button
-                    className="fonts-violet w-[190px] h-[50px] mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center"
+                    className=" w-[190px] h-[50px] mx-auto text-white py-3 rounded-lg flex items-center justify-center"
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}
@@ -152,26 +162,27 @@ const WalletConnection = () => {
                     </button>
             </div>
         </div>
-        <CarouselMobile />
-        <div className='mt-4 w-[150px] h-[45px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F] hover:bg-gray-600 hover:bg-opacity-30'
-        onClick={goToExplore}>
+        <CarouselMobile/>
+        <div  data-aos="fade-left" className='mt-4 w-[150px] h-[45px] rounded-lg mx-auto flex flex-row justify-center items-center gap-2 border border-[#343B4F] hover:bg-gray-600 hover:bg-opacity-30'
+        onClick={goToExplore}
+        >
             <p className='text-[#AEB9E1] text-sm'>Explore</p>
             <img src="./images/icons/bag.png" alt="bag" className='w-4 h-4'/>
         </div>
-        <FooterMobile />
+        <FooterMobile/>
           </div>
         </div>
       ) : 
       (
-        <div className="bg-[#0A1330] text-white  h-[840px] flex flex-row items-center justify-center space-x-4 px-4 sm:px-6 lg:px-8 w-full"
+        <div className="  fonts-mono bg-[#0A1330] text-white  h-[840px] flex flex-row items-center justify-center space-x-4 px-4 sm:px-6 lg:px-8 w-full"
         style={{
           backgroundImage: "url('/images/backgrounds/grid2.png')",
           backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
         }}>
-        <div className='h-[635px] w-[560px] flex flex-col justify-between'>
-            <div className="fonts-violet flex items-center justify-evenly space-x-4 text-sm font-medium text-gray-400">
+        <div className='h-[635px] w-[560px] flex flex-col justify-between' data-aos="fade-right">
+            <div className=" flex items-center justify-evenly space-x-4 text-sm text-gray-400" data-aos="fade-left">
                 <button className="px-4 py-2 rounded-lg border border-[#AEB9E1] bg-[#AEB9E13D] text-[#AEB9E1] w-40 cursor-text">
                     Connect Wallet
                 </button>
@@ -184,8 +195,8 @@ const WalletConnection = () => {
                     NFT Generation
                 </button>
             </div>
-            <div className="bg-transparent p-8 rounded-lg shadow-lg border border-gray-700 h-[300px]">
-                <h2 className="text-5xl 2xl:text-5xl sm:text-4xl font-bold mb-4 fonts-violet">
+            <div className="bg-transparent p-8 rounded-lg shadow-lg border border-gray-700 h-[300px]" data-aos="fade-right">
+                <h2 className="text-5xl 2xl:text-5xl sm:text-4xl mb-4 ">
                     Generate your<br/>unique NFT based<br/> on your tokens
                 </h2>
                 <p className="text-[#AEB9E1] text-lg fonts-mono">
@@ -193,14 +204,14 @@ const WalletConnection = () => {
                 </p>
             </div>
             <div className="bg-transparent p-8 rounded-lg shadow-lg border border-gray-700 h-[250px]">
-                <Carousel />
+                <Carousel data-aos="fade-left"/>
             </div>
         </div>
 
-        <div className='h-[635px] w-[470px] bg-home-ellipse border border-[#343B4F] rounded-md'>
+        <div className='h-[635px] w-[470px] bg-home-ellipse border border-[#343B4F] rounded-md' data-aos="fade-left">
             <div className="bg-[#0A1330] p-8 rounded-lg shadow-lg  w-full h-full max-w-md">
                 {/* Заголовок */}
-                <h2 className="text-4xl font-bold text-white mb-2 text-center fonts-violet">Connect Wallet</h2>
+                <h2 className="text-4xl text-white mb-2 text-center ">Connect Wallet</h2>
                 <p className="text-[#AEB9E1] text-center mb-6 fonts-mono">Choose your wallet to log in</p>
         
                 {/* Что такое Wallet */}
@@ -286,7 +297,7 @@ const WalletConnection = () => {
                     </div>
                 {/* Кнопка Scan My Wallet */}
                 <button
-                    className="fonts-violet w-52 h-14 mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center text-lg hover:opacity-80 ease-in-out"
+                    className=" w-52 h-14 mx-auto text-white py-3 rounded-lg flex items-center justify-center text-lg hover:opacity-80 ease-in-out"
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}

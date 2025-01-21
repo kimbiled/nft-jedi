@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Carousel = () => {
+  useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, []);
   const items = [
     { id: 1, username: "unit1", name: "Cyber", img: "./images/avatars/first.png" },
     { id: 2, username: "vkptr03", name: "Floking", img: "./images/avatars/second.png" },
@@ -25,7 +29,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#0A1330]">
+    <div className="relative w-full overflow-hidden bg-[#0A1330] " data-aos="fade-left">
       {/* Левая тень */}
       <div className="absolute top-0 left-0 w-12 h-full bg-gradient-to-r from-[#0A1330] to-transparent z-10 pointer-events-none"></div>
 
@@ -56,7 +60,7 @@ const Carousel = () => {
             </div>
 
             {/* Название */}
-            <p className="text-lg text-white font-medium mt-1 text-left">
+            <p className="text-lg text-white mt-1 text-left">
               {item.name}
             </p>
           </div>

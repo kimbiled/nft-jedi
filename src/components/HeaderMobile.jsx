@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const HeaderMobile = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+useEffect(() => {
+      AOS.init({ duration: 1000, once: true});
+    }, []);
   const navigate = useNavigate();
   // Функция для переключения состояния меню
   const toggleMenu = () => {
@@ -20,7 +24,7 @@ const HeaderMobile = () => {
   }
 
   return (
-    <header className='text-white flex flex-row justify-around items-center mt-6 w-[90%] h-[70px] rounded-lg bg-[#AEB9E103] border border-[#343B4F47] backdrop-blur-[24px] mb-12'>
+    <header className='text-white flex flex-row justify-around items-center mt-6 w-[90%] h-[70px] rounded-lg bg-[#AEB9E103] border border-[#343B4F47] backdrop-blur-[24px] mb-12' data-aos="fade-left">
       <button
         className="fonts-violet w-[55%] h-[2.8rem] text-white font-bold rounded-lg flex items-center justify-center "
         style={{

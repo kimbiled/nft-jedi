@@ -2,11 +2,15 @@ import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderMobileScan from './HeaderMobileScan'
 import FooterMobile from './FooterMobile'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const ScanWallet = () => {
 
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
+useEffect(() => {
+      AOS.init({ duration: 1000, once:true });
+    }, []);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -22,7 +26,7 @@ const ScanWallet = () => {
   return (
     <div>
       {isMobile? (
-         <div className="flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden max-w-[425px]"
+         <div className="  fonts-mono flex flex-col items-center h-auto bg-[#081028] overflow-x-hidden max-w-[425px]"
          style={{
            backgroundImage: "url('/images/backgrounds/grid.png')",
            backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона
@@ -30,8 +34,8 @@ const ScanWallet = () => {
            backgroundRepeat: "no-repeat"
          }}>
            <HeaderMobileScan />
-           <div className='flex flex-col items-center justify-center gap-4'>
-             <div className='flex flex-row items-center mb-4'>
+           <div className='flex flex-col items-center justify-center gap-4' >
+             <div className='flex flex-row items-center mb-4' data-aos="fade-right">
                <a href='https://degenai.ai/'>
                <img
                    src="./images/icons/logo.png" // Замените на ваш логотип
@@ -40,18 +44,18 @@ const ScanWallet = () => {
                />
                </a>
              </div>
-             <div className='sm20:w-[250px] flex flex-col gap-5 mb-8'>
-               <h1 className='text-3xl text-white fonts-violet mx-auto text-center'>Transform Your
+             <div className='sm20:w-[250px] flex flex-col gap-5 mb-8' data-aos="fade-left">
+               <h1 className='text-3xl text-white mx-auto text-center'>Transform Your
 Tokens Into
 Exclusive NFTs</h1>
                <p className='text-[#AEB9E1] fonts-mono text-center'>Each NFT is uniquely crafted
                based on the coins you hold</p>
              </div>
  
-             <div className="h-[715px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]">
+             <div className="h-[715px] mb-8 sm20:w-[300px] sm75:w-[350px] sm25:w-[390px]" data-aos="fade-right">
              <div className="bg-[#0A1330] p-2  w-full border border-[#343B4F] rounded-md h-full sm25:w-[390px] sm20:w-[300px] sm75:w-[350px] sm25:mx-auto sm20:mx-auto sm75:mx-auto">
                  {/* Заголовок */}
-                 <h2 className="text-[28px] font-bold text-white mb-2 mt-10 text-center fonts-violet">Tokens Detected!</h2>
+                 <h2 className="text-[28px] text-white mb-2 mt-10 text-center">Tokens Detected!</h2>
                  <p className="text-[#AEB9E1] text-center mb-6 fonts-mono">Your Wallet Contents</p>
          
                  {/* <div className="text-[#AEB9E1] mb-6 flex flex-row justify-center">
@@ -79,7 +83,7 @@ Exclusive NFTs</h1>
                           </div>
                           {/* Информация */}
                           <div className='flex flex-col gap-2'> 
-                            <p className="text-white font-bold text-sm flex items-center">
+                            <p className="text-white text-sm flex items-center">
                               PepeCoin <span className="text-yellow-400 ml-1 text-[8px]">★</span>
                             </p>
                             <p className="text-[#AEB9E1] text-[10px]">
@@ -117,7 +121,7 @@ Exclusive NFTs</h1>
                           </div>
                           {/* Информация */}
                           <div className='flex flex-col gap-2'> 
-                            <p className="text-white font-bold text-sm flex items-center">
+                            <p className="text-white text-sm flex items-center">
                               DogeCoin
                             </p>
                             <p className="text-[#AEB9E1] text-[10px]">
@@ -155,7 +159,7 @@ Exclusive NFTs</h1>
                           </div>
                           {/* Информация */}
                           <div className='flex flex-col gap-2'> 
-                            <p className="text-white font-bold text-sm flex items-center">
+                            <p className="text-white text-sm flex items-center">
                               Shiba Inu
                             </p>
                             <p className="text-[#AEB9E1] text-[10px]">
@@ -203,7 +207,7 @@ Exclusive NFTs</h1>
               </button>
 
               <button
-                    className="mt-8 w-56 h-14 mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center fonts-violet "
+                    className="mt-8 w-56 h-14 mx-auto text-white py-3 rounded-lg flex items-center justify-center "
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}
@@ -228,16 +232,17 @@ Exclusive NFTs</h1>
              
          </div>
          <div
-  className="p-4 rounded-lg shadow-lg border border-gray-700 h-[350px] sm20:w-[300px] sm75:w-[350px] sm25:w-[390px] "
+  className="p-4 rounded-lg shadow-lg border border-gray-700 h-[380px] sm20:w-[300px] sm75:w-[350px] sm25:w-[390px] "
   style={{
     backgroundImage: "url('/images/backgrounds/waves.png')",
     backgroundSize: "130%", // Уменьшение размера фона (например, 120% от исходного размера)
-    backgroundPosition: "center 180px", // Центрирование фона
+    backgroundPosition: "center 200px", // Центрирование фона
     backgroundRepeat: "no-repeat"
   }}
+  data-aos="fade-left"
 >
   {/* Заголовок */}
-  <h2 className="text-4xl sm20:text-[26px] 2xl:text-[42px] sm:text-4xl font-bold mb-2 text-white fonts-violet sm20:w-[260px] mx-auto mt-8 text-center">
+  <h2 className="text-4xl sm20:text-[26px] 2xl:text-[42px] sm:text-4xl mb-2 text-white sm20:w-[260px] mx-auto mt-8 text-center" >
     NFT Sales Analytics
   </h2>
 
@@ -271,7 +276,7 @@ Exclusive NFTs</h1>
         className="w-full h-full object-cover"
       />
     </div>
-    <p className="text-white text-xs mr-5">PepeCoin</p>
+    <p className="text-white text-xs ">PepeCoin</p>
     </div>
   </div>
 </div>
@@ -280,15 +285,15 @@ Exclusive NFTs</h1>
          </div>
       ) : 
       (
-        <div className="bg-[#0A1330] text-white h-[840px] flex flex-row items-center justify-center space-x-4 px-4 sm:px-6 lg:px-8 w-full"
+        <div className="  fonts-mono bg-[#0A1330] text-white h-[840px] flex flex-row items-center justify-center space-x-4 px-4 sm:px-6 lg:px-8 w-full"
         style={{
           backgroundImage: "url('/images/backgrounds/grid2.png')",
           backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat"
         }}>
-        <div className='h-[635px] w-[560px] flex flex-col justify-between gap-4'>
-            <div className="flex items-center justify-evenly space-x-4 text-sm font-medium text-gray-400 fonts-violet">
+        <div className='h-[635px] w-[560px] flex flex-col justify-between gap-4'  data-aos="fade-right">
+            <div className="flex items-center justify-evenly space-x-4 text-sm text-gray-400">
                 <button className="px-4 py-2 rounded-lg border border-gray-600 bg-[#AEB9E103] w-40 backdrop-blur-[24px]">
                     Connect Wallet
                 </button>
@@ -302,7 +307,7 @@ Exclusive NFTs</h1>
                 </button>
             </div>
             <div className="bg-transparent p-8 rounded-lg shadow-lg border border-gray-700 h-[265px] flex flex-col justify-center">
-                <h2 className="text-4xl 2xl:text-[42px] sm:text-4xl font-bold mb-4 leading-relaxed fonts-violet">
+                <h2 className="text-4xl 2xl:text-[42px] sm:text-4xl mb-4 leading-relaxed">
                 Transform your tokens<br/>into exclusive NFTs
                 </h2>
                 <p className="text-[#AEB9E1] text-lg fonts-mono">
@@ -320,7 +325,7 @@ Exclusive NFTs</h1>
   }}
 >
   {/* Заголовок */}
-  <h2 className="text-4xl 2xl:text-[42px] sm:text-4xl font-bold mb-4 leading-relaxed text-white fonts-violet">
+  <h2 className="text-4xl 2xl:text-[42px] sm:text-4xl mb-4 leading-relaxed text-white">
     NFT Sales Analytics
   </h2>
 
@@ -353,17 +358,17 @@ Exclusive NFTs</h1>
         className="w-full h-full object-cover"
       />
     </div>
-    <p className="text-white text-sm font-bold">PepeCoin</p>
+    <p className="text-white text-sm">PepeCoin</p>
   </div>
 </div>
 
 
         </div>
 
-        <div className='h-[635px] w-[470px] bg-home-ellipse border border-[#343B4F] rounded-md'>
+        <div className='h-[635px] w-[470px] bg-home-ellipse border border-[#343B4F] rounded-md'  data-aos="fade-right">
             <div className="bg-[#0A1330] p-8 rounded-lg shadow-lg w-full h-full max-w-md">
                 {/* Заголовок */}
-                <h2 className="text-4xl font-bold text-white mb-2 text-center fonts-violet">Tokens Detected!</h2>
+                <h2 className="text-4xl text-white mb-2 text-center ">Tokens Detected!</h2>
                 <p className="text-[#AEB9E1] text-center mb-6 fonts-mono">Your Wallet Contents</p>
         
                 {/* Что такое Wallet
@@ -378,9 +383,9 @@ Exclusive NFTs</h1>
                 <h3 className="text-[#AEB9E1] mb-4 fonts-mono">TOP 3 your Tokens</h3>
                 <div className="rounded-lg shadow-lg">
   {/* Список монет */}
-  <div className="space-y-2 fonts-mono">
+  <div className="space-y-2 fonts-mono"  data-aos="fade-left">
     {/* PepeCoin */}
-    <div className='flex flex-row gap-2'>
+    <div className='flex flex-row gap-2' data-aos="fade-left">
     <div className="flex flex-row h-20 items-center justify-between p-4 rounded-lg bg-transparent border border-[#343B4F] gap-4 w-[360px]">
       {/* Основная часть (токены и информация) */}
       <div className="flex flex-row items-center space-x-4">
@@ -394,7 +399,7 @@ Exclusive NFTs</h1>
         </div>
         {/* Информация */}
         <div>
-          <p className="text-white font-bold text-lg flex items-center">
+          <p className="text-white text-lg flex items-center">
             PepeCoin <span className="text-yellow-400 ml-1">★</span>
           </p>
           <p className="text-[#AEB9E1] text-sm">
@@ -418,7 +423,7 @@ Exclusive NFTs</h1>
     </div>
 
     {/* DogeCoin */}
-    <div className='flex flex-row gap-2'>
+    <div className='flex flex-row gap-2' data-aos="fade-left">
     <div className="flex flex-row h-20 items-center justify-between p-4 rounded-lg bg-transparent border border-[#343B4F] gap-4 w-[360px]">
       {/* Основная часть (токены и информация) */}
       <div className="flex flex-row items-center space-x-4">
@@ -432,7 +437,7 @@ Exclusive NFTs</h1>
         </div>
         {/* Информация */}
         <div>
-          <p className="text-white font-bold text-lg flex items-center">
+          <p className="text-white text-lg flex items-center">
           DogeCoin <span className="text-yellow-400 ml-1">★</span>
           </p>
           <p className="text-[#AEB9E1] text-sm">
@@ -456,7 +461,7 @@ Exclusive NFTs</h1>
     </div>
 
     {/* Shiba Inu */}
-    <div className='flex flex-row gap-2'>
+    <div className='flex flex-row gap-2' data-aos="fade-left">
     <div className="flex flex-row h-20 items-center justify-between p-4 rounded-lg bg-transparent border border-[#343B4F] gap-4 w-[360px]">
       {/* Основная часть (токены и информация) */}
       <div className="flex flex-row items-center space-x-4">
@@ -470,7 +475,7 @@ Exclusive NFTs</h1>
         </div>
         {/* Информация */}
         <div>
-          <p className="text-white font-bold text-lg flex items-center">
+          <p className="text-white text-lg flex items-center">
           Shiba Inu<span className="text-yellow-400 ml-1">★</span>
           </p>
           <p className="text-[#AEB9E1] text-sm">
@@ -495,7 +500,7 @@ Exclusive NFTs</h1>
   </div>
 </div>
 
-<div className="flex justify-between space-x-4 mt-4">
+<div className="flex justify-between space-x-4 mt-2" data-aos="fade-left">
   {/* Кнопка "Other Coins" */}
   <button
     className="flex items-center justify-center w-[205px] px-4 py-2 rounded-lg border border-[#343B4F] text-[#AEB9E1] bg-no-repeat bg-cover bg-center"
@@ -510,7 +515,7 @@ Exclusive NFTs</h1>
   </button>
 
   {/* Кнопка "? Generation Fee" */}
-  <button className="flex items-center w-[205px] px-4 py-2 rounded-lg border border-[#343B4F] text-[#AEB9E1] bg-transparent">
+  <button className="flex items-center w-[205px] px-4 py-2 rounded-lg border border-[#343B4F] text-[#AEB9E1] bg-transparent" data-aos="fade-left">
     {/* Вопросительный знак как изображение */}
     <div className="w-6 h-6 flex items-center justify-center mr-2">
       <img
@@ -524,7 +529,7 @@ Exclusive NFTs</h1>
 </div>
 
                   <button
-                    className="mt-8 w-56 h-14 mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center text-lg"
+                    className="mt-4 w-56 h-14 mx-auto text-white py-3 rounded-lg flex items-center justify-center text-lg" data-aos="fade-left"
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}
@@ -534,7 +539,7 @@ Exclusive NFTs</h1>
                     </button>
                     <div className="relative group">
   {/* Кнопка */}
-  <button className="flex flex-row items-center mx-auto px-4 py-2 rounded-lg text-[#AEB9E1] mt-3">
+  <button className="flex flex-row items-center mx-auto rounded-lg text-[#AEB9E1] mt-3 text-sm " data-aos="fade-left">
     <div className="w-6 h-6 flex items-center justify-center mr-2">
       <img
         src="./images/icons/question.png"

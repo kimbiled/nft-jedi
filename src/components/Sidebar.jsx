@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Sidebar = () => {
+    useEffect(() => {
+          AOS.init({ duration: 1000});
+        }, []);
     const [activeMenu, setActiveMenu] = useState(null);
-
+    const navigate = useNavigate()
+    const goToMarketplace = () => {
+        navigate("/marketplace"); // Переход на страницу /about
+      };
     const toggleMenu = (menu) => {
       setActiveMenu((prevMenu) => (prevMenu === menu ? null : menu));
     };
@@ -121,7 +129,8 @@ const Sidebar = () => {
         </div>
 
         {/* Marketplace */}
-        <div className="group flex items-center justify-between hover:text-[#CB3CFF]  h-[40px]">
+        <div className="group flex items-center justify-between hover:text-[#CB3CFF]  h-[40px]"
+             onClick={goToMarketplace}>
             <div className="flex items-center space-x-2">
                 {/* SVG Иконка */}
                 <svg

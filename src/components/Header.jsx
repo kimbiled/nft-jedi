@@ -1,7 +1,12 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Header = () => {
+  useEffect(() => {
+        AOS.init({ duration: 1000, once:true });
+      }, []);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const navigate = useNavigate()
 
@@ -24,7 +29,7 @@ const Header = () => {
         <div> </div>
       ) :
       (
-      <header className="fonts-mono bg-[#0A1330] text-white shadow-md border-b-[#343B4F] border-b">
+      <header className="fonts-mono bg-[#0A1330] text-white shadow-md border-b-[#343B4F] border-b"  data-aos="fade-left">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-evenly h-20">
           {/* Left Section: Logo */}
           <div className="flex items-center space-x-4 justify-between">
@@ -61,7 +66,7 @@ const Header = () => {
            </div>
           </div>
           {/* Center Section: Navigation */}
-          <nav className="hidden md:flex space-x-10 text-sm font-medium mr-8">
+          <nav className="hidden md:flex space-x-10 text-sm mr-8">
             <button className="hover:text-gray-400">Generate</button>
             <div className="relative group">
               <button className="hover:text-gray-400">Explore ▾</button>

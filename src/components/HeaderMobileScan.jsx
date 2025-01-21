@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const HeaderMobileScan = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+useEffect(() => {
+      AOS.init({ duration: 1000, once:true });
+    }, []);
   const navigate = useNavigate();
   // Функция для переключения состояния меню
   const toggleMenu = () => {
@@ -20,7 +24,7 @@ const HeaderMobileScan = () => {
   }
 
   return (
-    <header className='text-white flex flex-row justify-around items-center mt-6 w-[90%] h-[70px] rounded-lg bg-[#AEB9E103] border border-[#343B4F47] backdrop-blur-[24px] mb-12'>
+    <header className='text-white flex flex-row justify-around items-center mt-6 w-[90%] h-[70px] rounded-lg bg-[#AEB9E103] border border-[#343B4F47] backdrop-blur-[24px] mb-12' data-aos="fade-left">
       <div className='flex flex-row items-center gap-2'>
         <img src="./images/avatars/avatar.png" alt="avatar" className='w-6 h-6' />
         <p className='fonts-mono text-sm'>0x17...85</p>

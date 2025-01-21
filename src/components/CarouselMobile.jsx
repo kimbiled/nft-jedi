@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const CarouselMobile = () => {
+  useEffect(() => {
+      AOS.init({ duration: 1000, once: true });
+    }, []);
   const items = [
     { id: 1, username: "unit1", name: "Cyber", img: "./images/avatars/first.png" },
     { id: 2, username: "vkptr03", name: "Floking", img: "./images/avatars/second.png" },
@@ -11,11 +15,10 @@ const CarouselMobile = () => {
 
   useEffect(() => {
     const scrollCarousel = () => {
-      if (carouselRef.current) {
-        carouselRef.current.scrollLeft += 1;
-        if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth / 2) {
-          carouselRef.current.scrollLeft = 0;
-        }
+      if (!carouselRef.current) return;
+      carouselRef.current.scrollLeft += 1;
+      if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth / 2) {
+        carouselRef.current.scrollLeft = 0;
       }
     };
 
@@ -24,17 +27,16 @@ const CarouselMobile = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#0A1330] p-4">
+    <div className="relative w-full overflow-hidden p-4" data-aos="fade-left">
       <div
         ref={carouselRef}
-        className="flex space-x-4 w-full overflow-x-hidden"
+        className="flex space-x-4 w-full overflow-x-auto scrollbar-hide"
         style={{ scrollBehavior: "smooth" }}
       >
-        {/* Дублируем элементы для бесконечной прокрутки */}
         {items.concat(items).map((item, index) => (
           <div
             key={index}
-            className="flex flex-col bg-[#1a233a] p-4 rounded-lg flex-shrink-0 border border-[#343B4F]"
+            className="flex flex-col bg-[#0B173903] p-4 rounded-lg flex-shrink-0 border border-[#343B4F]"
             style={{ width: "152px", height: "208px" }}
           >
             <img
@@ -46,9 +48,7 @@ const CarouselMobile = () => {
               <img src="./images/icons/tick.png" alt="tick" className="w-3 h-3" />
               <p className="text-xs text-[#AEB9E1]">{item.username}</p>
             </div>
-            <p className="text-sm text-white font-medium mt-1 text-left">
-              {item.name}
-            </p>
+            <p className="text-sm text-white mt-1 text-left">{item.name}</p>
           </div>
         ))}
       </div>

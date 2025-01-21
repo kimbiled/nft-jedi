@@ -1,5 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Header = () => {
+  useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, []);
   return (
     <header className="fonts-mono bg-[#0A1330] text-white shadow-md border-b-[#343B4F] border-b overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-evenly h-20">
@@ -35,7 +40,7 @@ const Header = () => {
          </div>
         </div>
         {/* Center Section: Navigation */}
-        <nav className="hidden md:flex space-x-10 text-sm font-medium mr-8">
+        <nav className="hidden md:flex space-x-10 text-sm mr-8">
           <button className="hover:text-gray-400">Generate</button>
           <div className="relative group">
             <button className="hover:text-gray-400">Explore ▾</button>

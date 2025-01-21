@@ -40,11 +40,13 @@ const WalletConnection = () => {
           <HeaderMobile />
           <div className='flex flex-col items-center justify-center gap-4'>
             <div className='flex flex-row items-center mb-4'>
+              <a href='https://degenai.ai/'>
               <img
                   src="./images/icons/logo.png" // Замените на ваш логотип
                   alt="Logo"
                   className="w-[5%] h-[5%] mx-auto"
               />
+              </a>
             </div>
             <div className='w-[20%] flex flex-col gap-5 mb-8'>
               <h1 className='text-3xl text-white fonts-violet mx-auto text-center'>Generate your unique NFT based on your tokens</h1>
@@ -161,18 +163,24 @@ const WalletConnection = () => {
         </div>
       ) : 
       (
-        <div className="bg-[#0A1330] text-white  h-[840px] flex flex-row items-center justify-center space-x-4 px-4 sm:px-6 lg:px-8 w-full">
+        <div className="bg-[#0A1330] text-white  h-[840px] flex flex-row items-center justify-center space-x-4 px-4 sm:px-6 lg:px-8 w-full"
+        style={{
+          backgroundImage: "url('/images/backgrounds/grid2.png')",
+          backgroundSize: "100%", // Уменьшение размера фона (например, 120% от исходного размера) // Центрирование фона
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}>
         <div className='h-[635px] w-[560px] flex flex-col justify-between'>
             <div className="fonts-violet flex items-center justify-evenly space-x-4 text-sm font-medium text-gray-400">
-                <button className="px-4 py-2 rounded-lg border border-[#AEB9E1] bg-[#AEB9E13D] text-[#AEB9E1] w-40">
+                <button className="px-4 py-2 rounded-lg border border-[#AEB9E1] bg-[#AEB9E13D] text-[#AEB9E1] w-40 cursor-text">
                     Connect Wallet
                 </button>
                 <img src="./images/icons/active-arrow.png" alt='active-arrow' />
-                <button className="px-4 py-2 rounded-lg border border-gray-600 bg-[#AEB9E103] w-36" onClick={goToScan}>
+                <button className="px-4 py-2 rounded-lg border border-gray-600 bg-[#AEB9E103] w-36 cursor-text">
                     Scan Wallet
                 </button>
                 <img src="./images/icons/non-active-arrow.png" alt='active-arrow' />
-                <button className="px-4 py-2 rounded-lg border border-gray-600 bg-[#AEB9E103] w-44">
+                <button className="px-4 py-2 rounded-lg border border-gray-600 bg-[#AEB9E103] w-44 cursor-text">
                     NFT Generation
                 </button>
             </div>
@@ -278,10 +286,11 @@ const WalletConnection = () => {
                     </div>
                 {/* Кнопка Scan My Wallet */}
                 <button
-                    className="fonts-violet w-52 h-14 mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center text-lg"
+                    className="fonts-violet w-52 h-14 mx-auto text-white font-bold py-3 rounded-lg flex items-center justify-center text-lg hover:opacity-80 ease-in-out"
                     style={{
                         background: 'linear-gradient(128.49deg, #CB3CFF 19.86%, #7F25FB 68.34%)',
                     }}
+                    onClick={goToScan}
                     >
                     Scan my wallet →
                     </button>

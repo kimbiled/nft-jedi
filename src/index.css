@@ -46,3 +46,12 @@ code {
   font-style: normal;
 }
 
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Для Chrome, Safari и Edge */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Для IE и Edge */
+  scrollbar-width: none; /* Для Firefox */
+}

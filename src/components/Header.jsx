@@ -1,8 +1,14 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  
+    const navigate = useNavigate()
+
+    const goToExplore = () => {
+      navigate("/marketplace")
+    }
+
     useEffect(() => {
       const handleResize = () => {
         setIsMobile(window.innerWidth <= 768);
@@ -23,16 +29,19 @@ const Header = () => {
           {/* Left Section: Logo */}
           <div className="flex items-center space-x-4 justify-between">
             <div className='flex flex-row items-center'>
+              <a href='https://degenai.ai/'>
               <img
                   src="./images/icons/logo.png" // Замените на ваш логотип
                   alt="Logo"
                   className="w-8 h-5"
               />
+              </a>
             </div>
   
             {/* Back Button */}
            <div>
-           <button className="flex items-center space-x-2 px-4 py-2 border border-[#343B4F] rounded-md hover:bg-gray-700 ml-8">
+           <button className="flex items-center space-x-2 px-4 py-2 border border-[#343B4F] rounded-md hover:bg-gray-700 ease-in ml-8"
+           onClick={() => window.location.href = 'https://degenai.ai/'}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
@@ -80,7 +89,9 @@ const Header = () => {
               <img src="./images/icons/crystal.png" alt='crystal' className='w-5 h-5' />
             </button>
             {/* Explore Button */}
-            <button className="hover:text-gray-400 text-[#AEB9E1] border border-[#343B4F] rounded-md hover:bg-gray-700 px-4 py-2 flex flex-row justify-between items-center w-32">
+            <button className="hover:text-gray-400 text-[#AEB9E1] border border-[#343B4F] rounded-md hover:bg-gray-700 px-4 py-2 flex flex-row justify-between items-center w-32"
+                    onClick={goToExplore}
+            >
               Explore
               <img src="./images/icons/bag.png" alt='bag' className='w-4 h-4' />
             </button>
